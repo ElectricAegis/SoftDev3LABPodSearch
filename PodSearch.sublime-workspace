@@ -4,8 +4,44 @@
 		"selected_items":
 		[
 			[
+				"co",
+				"controller"
+			],
+			[
+				"me",
+				"m_model"
+			],
+			[
+				"m",
+				"model"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"P",
+				"PodSearchController"
+			],
+			[
+				"con",
+				"Controller"
+			],
+			[
+				"BTN",
+				"btnSave"
+			],
+			[
 				"btn",
 				"btnSearch"
+			],
+			[
+				"btnV",
+				"btnView"
 			],
 			[
 				"tf",
@@ -31,7 +67,7 @@
 			"file": "build.xml",
 			"settings":
 			{
-				"buffer_size": 2294,
+				"buffer_size": 2293,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,15 +75,15 @@
 			"file": "src/pod_search/PodSearch.java",
 			"settings":
 			{
-				"buffer_size": 538,
+				"buffer_size": 647,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/pod_search/view/podSearchView.java",
+			"file": "src/pod_search/view/PodSearchView.java",
 			"settings":
 			{
-				"buffer_size": 2236,
+				"buffer_size": 2439,
 				"line_ending": "Unix"
 			}
 		},
@@ -55,9 +91,17 @@
 			"file": "src/pod_search/model/PodResultsModel.java",
 			"settings":
 			{
-				"buffer_size": 114,
+				"buffer_size": 247,
 				"line_ending": "Unix",
 				"name": "//Pod search results model"
+			}
+		},
+		{
+			"file": "src/pod_search/controller/PodSearchController.java",
+			"settings":
+			{
+				"buffer_size": 2471,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -66,6 +110,40 @@
 			{
 				"buffer_size": 212,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcView.java",
+			"settings":
+			{
+				"buffer_size": 2255,
+				"line_ending": "Unix",
+				"name": "// structure/calc-mvc/CalcView.java - View compone"
+			}
+		},
+		{
+			"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcMVC.java",
+			"settings":
+			{
+				"buffer_size": 611,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcController.java",
+			"settings":
+			{
+				"buffer_size": 2016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcModel.java",
+			"settings":
+			{
+				"buffer_size": 1641,
+				"line_ending": "Unix",
+				"name": "// structure/calc-mvc/CalcModel.java"
 			}
 		}
 	],
@@ -93,6 +171,7 @@
 	},
 	"file_history":
 	[
+		"/home/manie/Documents/SoftDev3Lab/PodSearch/PodSearch.sublime-project",
 		"/home/manie/Documents/SoftDev3Lab/PodSearch/src/PodSearch.java",
 		"/home/manie/Documents/SoftDev3Lab/HelloWorldWithAnt/src/HelloWorldTest.java",
 		"/home/manie/Documents/SoftDev3Lab/HelloWorldWithAnt/build.xml",
@@ -160,15 +239,15 @@
 					"file": "build.xml",
 					"settings":
 					{
-						"buffer_size": 2294,
+						"buffer_size": 2293,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								647,
-								647
+								24,
+								24
 							]
 						],
 						"settings":
@@ -188,15 +267,15 @@
 					"file": "src/pod_search/PodSearch.java",
 					"settings":
 					{
-						"buffer_size": 538,
+						"buffer_size": 647,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								538,
-								538
+								617,
+								617
 							]
 						],
 						"settings":
@@ -211,18 +290,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/pod_search/view/podSearchView.java",
+					"file": "src/pod_search/view/PodSearchView.java",
 					"settings":
 					{
-						"buffer_size": 2236,
+						"buffer_size": 2439,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								993,
-								993
+								1102,
+								1112
 							]
 						],
 						"settings":
@@ -232,7 +311,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -242,15 +321,15 @@
 					"file": "src/pod_search/model/PodResultsModel.java",
 					"settings":
 					{
-						"buffer_size": 114,
+						"buffer_size": 247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								67,
-								82
+								126,
+								126
 							]
 						],
 						"settings":
@@ -266,6 +345,34 @@
 				},
 				{
 					"buffer": 4,
+					"file": "src/pod_search/controller/PodSearchController.java",
+					"settings":
+					{
+						"buffer_size": 2471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								579,
+								579
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "src/pod_search/PodSearchTest.java",
 					"settings":
 					{
@@ -276,8 +383,8 @@
 						"selection":
 						[
 							[
-								19,
-								19
+								210,
+								210
 							]
 						],
 						"settings":
@@ -286,6 +393,124 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcView.java",
+					"settings":
+					{
+						"buffer_size": 2255,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								484
+							]
+						],
+						"settings":
+						{
+							"auto_name": "// structure/calc-mvc/CalcView.java - View compone",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcMVC.java",
+					"settings":
+					{
+						"buffer_size": 611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcController.java",
+					"settings":
+					{
+						"buffer_size": 2016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1168,
+								1168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 303.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/manie/Documents/SoftDev3Lab/MVCcalc/src/calc_mvc/CalcModel.java",
+					"settings":
+					{
+						"buffer_size": 1641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								846,
+								846
+							]
+						],
+						"settings":
+						{
+							"auto_name": "// structure/calc-mvc/CalcModel.java",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -310,11 +535,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -326,7 +558,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 241.0
 	},
 	"replace":
 	{
@@ -350,7 +582,7 @@
 		"width": 380.0
 	},
 	"show_minimap": true,
-	"show_open_files": true,
+	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 150.0,
