@@ -63,7 +63,8 @@ public class PodSearchView extends JFrame {
         gBC.gridy = 3;
         gBC.gridwidth = 3;
         //gBC.gridheight = GridBagConstraints.REMAINDER;
-        content.add(taResultsPanel, gBC);
+        JScrollPane scrlResultsPanel = new JScrollPane(taResultsPanel);
+        content.add(scrlResultsPanel, gBC);
         gBC.gridx = 0;
         gBC.gridy = 4;
         content.add(btnView, gBC);

@@ -12,6 +12,7 @@ import pod_search.model.*;
 public class PodSearchController {
     //... The Controller needs to interact with both the Model and View.
     private PodResultsModel m_model;
+    private DigitalPodModel digitalPodModel;
     private PodSearchView  m_view;
     
     //========================================================== constructor
@@ -40,8 +41,9 @@ public class PodSearchController {
             String searchQuery = "";
             try {
                 searchQuery = m_view.getSearchQuery();
-                //m_model.multiplyBy(userInput);
-                m_view.setResultOutput(searchQuery);
+                digitalPodModel = new DigitalPodModel();
+                digitalPodModel.search(searchQuery);
+                m_view.setResultOutput(digitalPodModel.getSearchResult());
                 
             } catch (NumberFormatException nfex) {
                 m_view.showError("Bad input: '" + searchQuery + "'");
