@@ -11,6 +11,7 @@ public class PodSearchView extends JFrame {
     
     //... Components
     private JTextField  tfSearchQuery   = new JTextField(20);
+    private JTextField  tfSelectResult  = new JTextField(20);
     private JTextArea   taResultsPanel  = new JTextArea(10,20);
     private JButton     btnSearch       = new JButton("Search");
     private JButton     btnView         = new JButton("View Saved Pod Casts");
@@ -31,15 +32,41 @@ public class PodSearchView extends JFrame {
         
         //... Layout the components.      
         JPanel content = new JPanel();
-        //FlowLayout 
-        content.setLayout(new FlowLayout());
-        content.add(new JLabel("Search"));
-        content.add(tfSearchQuery);
-        content.add(btnSearch);
-        content.add(new JLabel("Results"));
-        content.add(taResultsPanel);
-        content.add(btnSave);
-        content.add(btnView);
+        content.setLayout(new GridBagLayout());
+
+        GridBagConstraints gBC = new GridBagConstraints();
+        gBC.fill = GridBagConstraints.HORIZONTAL;
+
+        gBC.gridx = 0;
+        gBC.gridy = 0;
+        content.add(new JLabel("Search"), gBC);
+        gBC.gridx = 1;
+        gBC.gridy = 0;
+        content.add(tfSearchQuery, gBC);
+        gBC.gridx = 2;
+        gBC.gridy = 0;
+        content.add(btnSearch, gBC);
+        gBC.gridx = 0;
+        gBC.gridy = 1;
+        content.add(new JLabel("Select Result"), gBC);
+        gBC.gridx = 1;
+        gBC.gridy = 1;
+        content.add(tfSelectResult, gBC);
+        gBC.gridx = 2;
+        gBC.gridy = 1;
+        content.add(btnSave, gBC);
+        gBC.gridx = 0;
+        gBC.gridy = 2;
+        gBC.gridwidth = 3;
+        content.add(new JLabel("Results"), gBC);
+        gBC.gridx = 0;
+        gBC.gridy = 3;
+        gBC.gridwidth = 3;
+        //gBC.gridheight = GridBagConstraints.REMAINDER;
+        content.add(taResultsPanel, gBC);
+        gBC.gridx = 0;
+        gBC.gridy = 4;
+        content.add(btnView, gBC);
         
         //... finalize layout
         this.setContentPane(content);
