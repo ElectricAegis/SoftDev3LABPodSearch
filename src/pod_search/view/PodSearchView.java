@@ -17,11 +17,11 @@ public class PodSearchView extends JFrame {
     private JButton     btnView         = new JButton("View Saved Pod Casts");
     private JButton     btnSave         = new JButton("Save");
     
-    private PodResultsModel m_model;
+    private PodcastStorageModel m_model;
     
     //======================================================= constructor
     /** Constructor */
-    public PodSearchView(PodResultsModel model) {
+    public PodSearchView(PodcastStorageModel model) {
         //... Set up the logic
         m_model = model;
         //m_model.setValue(INITIAL_VALUE);

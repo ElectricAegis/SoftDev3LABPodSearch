@@ -11,13 +11,13 @@ import pod_search.model.*;
 
 public class PodSearchController {
     //... The Controller needs to interact with both the Model and View.
-    private PodResultsModel m_model;
+    private PodcastStorageModel m_model;
     private DigitalPodModel digitalPodModel;
     private PodSearchView  m_view;
     
     //========================================================== constructor
     /** Constructor */
-    public PodSearchController(PodResultsModel model, PodSearchView view) {
+    public PodSearchController(PodcastStorageModel model, PodSearchView view) {
         m_model = model;
         m_view  = view;
         
@@ -67,7 +67,8 @@ public class PodSearchController {
         public void actionPerformed(ActionEvent e) {
             //m_model.reset();
             //m_view.reset();
-            m_view.setResultOutput(m_model.getSavedResults());
+            PodcastModel temp[] = m_model.getSavedPodcasts();
+            m_view.setResultOutput(temp[0].getName());
         }
     }// end inner class ClearListener
 }

@@ -8,10 +8,16 @@ public class PodcastModel {
 	private String _link;
 	private int _id;
 
-	public PodcastModel(String name, String link, int id = NULL) {
+	public PodcastModel(String name, String link, int id) {
 		setName(name);
 		setLink(link);
 		setID(id);
+	}
+
+	public PodcastModel() {
+		setName("");
+		setLink("");
+		setID(0);
 	}
 
 	public void setName(String name) {
@@ -24,5 +30,9 @@ public class PodcastModel {
 
 	public void setID(int id) {
 		_id = id;
+	}
+
+	public String getName() {
+		return _name;
 	}
 }

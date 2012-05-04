@@ -14,7 +14,7 @@ public class PodSearch {
     //    need them so there is only one copy of each.
     public static void main(String[] args) {
         
-        PodResultsModel     model      = new PodResultsModel();
+        PodcastStorageModel model      = new PodcastStorageModel();
         PodSearchView       view       = new PodSearchView(model);
         PodSearchController controller = new PodSearchController(model, view);
         
