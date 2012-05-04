@@ -4,16 +4,64 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"result"
+			],
+			[
+				"con",
+				"concat"
+			],
+			[
+				"l",
+				"line"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"_",
+				"_searchResult"
+			],
+			[
+				"sea",
+				"_searchResult"
+			],
+			[
+				"pr",
+				"private"
+			],
+			[
+				"rea",
+				"readFromURL"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"se",
+				"searchQuery"
+			],
+			[
+				"di",
+				"digitalPodModel"
+			],
+			[
+				"D",
+				"DigitalPodModel"
+			],
+			[
+				"po",
+				"digitalPodModel"
+			],
+			[
 				"btn",
 				"btnSearch"
 			],
 			[
 				"tf",
 				"tfSearchQuery"
-			],
-			[
-				"po",
-				"pod_search"
 			],
 			[
 				"v",
@@ -31,7 +79,7 @@
 			"file": "build.xml",
 			"settings":
 			{
-				"buffer_size": 2294,
+				"buffer_size": 2293,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,23 +87,23 @@
 			"file": "src/pod_search/PodSearch.java",
 			"settings":
 			{
-				"buffer_size": 538,
+				"buffer_size": 647,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/pod_search/view/podSearchView.java",
+			"file": "src/pod_search/view/PodSearchView.java",
 			"settings":
 			{
-				"buffer_size": 2236,
+				"buffer_size": 3324,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/pod_search/model/PodResultsModel.java",
+			"file": "src/pod_search/model/PodcastModel.java",
 			"settings":
 			{
-				"buffer_size": 114,
+				"buffer_size": 150,
 				"line_ending": "Unix",
 				"name": "//Pod search results model"
 			}
@@ -66,6 +114,23 @@
 			{
 				"buffer_size": 212,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pod_search/controller/PodSearchController.java",
+			"settings":
+			{
+				"buffer_size": 2599,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pod_search/model/DigitalPodModel.java",
+			"settings":
+			{
+				"buffer_size": 2432,
+				"line_ending": "Unix",
+				"name": "import java.net.*;"
 			}
 		}
 	],
@@ -93,6 +158,7 @@
 	},
 	"file_history":
 	[
+		"/media/DATA/Wits/4th Year/ELEN 4010 - Software Dev III/Labs/Pod_Search/src/pod_search/view/podSearchView.java",
 		"/home/manie/Documents/SoftDev3Lab/PodSearch/src/PodSearch.java",
 		"/home/manie/Documents/SoftDev3Lab/HelloWorldWithAnt/src/HelloWorldTest.java",
 		"/home/manie/Documents/SoftDev3Lab/HelloWorldWithAnt/build.xml",
@@ -152,7 +218,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -160,15 +226,15 @@
 					"file": "build.xml",
 					"settings":
 					{
-						"buffer_size": 2294,
+						"buffer_size": 2293,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								647,
-								647
+								0,
+								0
 							]
 						],
 						"settings":
@@ -188,15 +254,15 @@
 					"file": "src/pod_search/PodSearch.java",
 					"settings":
 					{
-						"buffer_size": 538,
+						"buffer_size": 647,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								538,
-								538
+								0,
+								0
 							]
 						],
 						"settings":
@@ -211,18 +277,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/pod_search/view/podSearchView.java",
+					"file": "src/pod_search/view/PodSearchView.java",
 					"settings":
 					{
-						"buffer_size": 2236,
+						"buffer_size": 3324,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								993,
-								993
+								0,
+								0
 							]
 						],
 						"settings":
@@ -239,17 +305,17 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/pod_search/model/PodResultsModel.java",
+					"file": "src/pod_search/model/PodcastModel.java",
 					"settings":
 					{
-						"buffer_size": 114,
+						"buffer_size": 150,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								67,
+								82,
 								82
 							]
 						],
@@ -276,13 +342,70 @@
 						"selection":
 						[
 							[
-								19,
-								19
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/pod_search/controller/PodSearchController.java",
+					"settings":
+					{
+						"buffer_size": 2599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 538.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/pod_search/model/DigitalPodModel.java",
+					"settings":
+					{
+						"buffer_size": 2432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								270
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import java.net.*;",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
