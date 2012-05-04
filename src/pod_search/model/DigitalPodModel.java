@@ -3,11 +3,19 @@ package pod_search.model;
 import java.net.*;
 import java.io.*;
 
+//Adding this for XML parser
+import javax.xml.parser.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Element;
+
 public class DigitalPodModel {
 
     private String _searchGenre;
     private String _prefix;
     private String _searchResult;
+    private URL _url;
 
     public DigitalPodModel() {
         _searchGenre = "";
@@ -19,7 +27,8 @@ public class DigitalPodModel {
         _searchGenre = searchGenre;
         String combined = _prefix.concat(_searchGenre);
         try {
-            URL url = new URL(combined);   
+            URL url = new URL(combined);  
+            _url = url; 
             _searchResult = readFromURL(url);
             return _searchResult; 
         }   catch (MalformedURLException e) {
@@ -31,6 +40,51 @@ public class DigitalPodModel {
 
     public String getSearchResult(){
         return _searchResult;
+    }
+
+    public void getSearchResult1(){
+        try{
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse(_url.openStream());
+                
+            doc.getDocumentElement().normalize();
+            NodeList nList = doc.getElementsByTagName("outline");
+            //System.out.println("-----------------------");
+                
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+                  
+                Node nNode = nList.item(temp);
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+            
+                    Element eElement = (Element) nNode;
+                          
+                    String[] podName = new String[nList.getLength()];
+                    String[] podUrl = new String[nList.getLength()];
+                          
+                    podName[temp]= getPodName("outline",eElement);
+                    podUrl[temp]= getPodUrl("outline",eElement);
+             
+                    //System.out.println(podName[temp]+", "+podUrl[temp]);
+             
+                }
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private String getPodName(String sTag, Element eElement){
+        String podName = eElement.getAttribute("text");
+
+        return podName;
+    }
+
+    private String getPodUrl(String sTag, Element eElement){
+        String url = eElement.getAttribute("url");
+
+        return url;
     }
 
 	private String readFromURL(URL url)
