@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 
 //Adding this for XML parser
-import javax.xml.parser.*;
+import javax.xml.parsers.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
