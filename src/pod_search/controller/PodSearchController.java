@@ -67,8 +67,12 @@ public class PodSearchController {
         public void actionPerformed(ActionEvent e) {
             //m_model.reset();
             //m_view.reset();
-            PodcastModel temp[] = m_model.getSavedPodcasts();
-            m_view.setResultOutput(temp[0].getName());
+            try {
+                PodcastModel temp[] = m_model.getSavedPodcasts();
+                m_view.setResultOutput(temp);
+            } catch (Exception ex) {
+                m_view.showError("Bad input: '" + ex.toString() + "'");
+            }
         }
     }// end inner class ClearListener
 }

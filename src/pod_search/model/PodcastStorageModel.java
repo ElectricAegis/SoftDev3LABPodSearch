@@ -24,7 +24,7 @@ public class PodcastStorageModel {
   private void setup() {
     try
     {
-      System.out.println("setup");
+      // System.out.println("setup");
         //Load the JDBC driver class dynamically.
         Driver d = (Driver)Class.forName(driver).newInstance();
         DriverManager.registerDriver(d);
@@ -39,9 +39,9 @@ public class PodcastStorageModel {
   private void connect() {
     try
         {
-          System.out.println("connect");
+          // System.out.println("connect");
             //FIXME: Load database filename via external config.
-            String url = "jdbc:sqlite:podcastdata.sqlite";
+            String url = "jdbc:sqlite:data/podcastdata.sqlite";
             con = DriverManager.getConnection(url);
         }
         catch(SQLException e)
@@ -55,10 +55,10 @@ public class PodcastStorageModel {
 
     try
         {
-          System.out.println("query");
+          //System.out.println("query");
             stmt = con.createStatement();
             res = stmt.executeQuery("SELECT COUNT(*) FROM podcasts");
-            numberOfResults = res.getInt();
+            numberOfResults = res.getInt("COUNT(*)");
             res = stmt.executeQuery(sql);
         }
         catch(SQLException e)
@@ -78,17 +78,11 @@ public class PodcastStorageModel {
   private void readResult() {
     try
         {
+          // System.out.println("readResult");
             //while(res.next())
-            System.out.println("readResult 1");
-            res.last();
-            System.out.println("eish");
-            podcastModels = new PodcastModel[res.getRow()];
-            System.out.println("readResult 1.5");
-            res.beforeFirst();
-            System.out.println("readResult 2");
-            for (int i = 1; i < 100; i = i + 1)
+            podcastModels = new PodcastModel[numberOfResults];
+            for (int i = 0; i < numberOfResults; i = i + 1)
             {
-              System.out.println("readResult 3");
                 if (!res.next()) return;
                 PodcastModel podcastModel = new PodcastModel();
                 podcastModel.setName(res.getString("name"));
@@ -117,7 +111,7 @@ public class PodcastStorageModel {
   private void close() {
     try
         {
-          System.out.println("close");
+          // System.out.println("close");
             res.close();
             stmt.close();
             con.close();

@@ -35,4 +35,12 @@ public class PodcastModel {
 	public String getName() {
 		return _name;
 	}
+
+	public int getID() {
+		return _id;
+	}
+
+	public String getLink() {
+		return _link;
+	}
 }

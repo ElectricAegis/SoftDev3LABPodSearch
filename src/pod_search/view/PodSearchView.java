@@ -18,6 +18,7 @@ public class PodSearchView extends JFrame {
     private JButton     btnSave         = new JButton("Save");
     
     private PodcastStorageModel m_model;
+    private PodcastModel[] results;
     
     //======================================================= constructor
     /** Constructor */
@@ -78,6 +79,14 @@ public class PodSearchView extends JFrame {
         // Controller in a real program, but this is a short example.
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+    // public setCurrentData(PodcastModel[] podcastModels) {
+    //     currentData = podcastModels;
+    // }
+
+    public PodcastModel[] getResults() {
+        return results;
+    }
     
     public void reset() {
        // m_totalTf.setText(INITIAL_VALUE);
@@ -87,10 +96,23 @@ public class PodSearchView extends JFrame {
         return tfSearchQuery.getText();
     }
     
-    public void setResultOutput(String newTotal) {
-        taResultsPanel.setText(newTotal);
+    public void setResultOutput(PodcastModel[] podcastModels) {
+        results = podcastModels;
+        String output = "";
+
+        for (int i = 0; i< results.length; i++) {
+            output += results[i].getID() + " " + 
+                    results[i].getName() + " " + 
+                    results[i].getLink() + "\n";
+        }
+
+        taResultsPanel.setText(output);
     }
     
+    public void setResultOutput(String output) {
+        taResultsPanel.setText(output);
+    }
+
     public void showError(String errMessage) {
         JOptionPane.showMessageDialog(this, errMessage);
     }
