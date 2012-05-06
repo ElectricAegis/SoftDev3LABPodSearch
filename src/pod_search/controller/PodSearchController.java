@@ -60,6 +60,9 @@ public class PodSearchController {
         public void actionPerformed(ActionEvent e) {
             //m_model.reset();
             //m_view.reset();
+            PodcastModel selectedCast = m_view.getSelectedPodcast();
+            // m_view.setResultOutput(results[0].toString());
+            m_model.savePodcast(selectedCast);
         }
     }// end inner class ClearListener
 

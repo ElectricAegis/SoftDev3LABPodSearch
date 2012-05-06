@@ -43,4 +43,8 @@ public class PodcastModel {
 	public String getLink() {
 		return _link;
 	}
+
+	public String toString () {
+		return getID() + " "+ getName();
+	}
 }

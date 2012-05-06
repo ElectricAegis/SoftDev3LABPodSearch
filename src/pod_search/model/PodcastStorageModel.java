@@ -21,6 +21,19 @@ public class PodcastStorageModel {
       return podcastModels;
   }
 
+  public void savePodcast(PodcastModel podcast) {
+
+    setup();
+    connect();
+    String insertQuery = "INSERT INTO podcasts "
+                      + "VALUES(NULL,'" + podcast.getName()
+                      + "','" + podcast.getLink()
+                      + "');";
+    addQuery(insertQuery);
+    // readResult();
+    close();
+  }
+
   private void setup() {
     try
     {
@@ -60,6 +73,28 @@ public class PodcastStorageModel {
             res = stmt.executeQuery("SELECT COUNT(*) FROM podcasts");
             numberOfResults = res.getInt("COUNT(*)");
             res = stmt.executeQuery(sql);
+        }
+        catch(SQLException e)
+        {
+            System.out.println("Error creating or running statement: " + e.toString());
+            try
+            {
+                con.close();
+            }
+            catch(Exception ex)
+            {
+            }
+            return;
+        }
+  }
+
+  private void addQuery(String sql) {
+
+    try
+        {
+          //System.out.println("query");
+            stmt = con.createStatement();
+            stmt.executeUpdate(sql);
         }
         catch(SQLException e)
         {
