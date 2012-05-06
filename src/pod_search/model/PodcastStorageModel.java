@@ -132,9 +132,9 @@ public class PodcastStorageModel {
             System.out.println("Error processing results: " + e.toString());
             try
             {
-                res.close();
-                stmt.close();
-                con.close();
+                if (res != null) res.close();
+                if (stmt != null) stmt.close();
+                if (con != null) con.close();
             }
             catch(Exception ex)
             {

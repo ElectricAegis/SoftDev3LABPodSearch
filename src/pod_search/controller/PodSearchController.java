@@ -43,7 +43,7 @@ public class PodSearchController {
                 searchQuery = m_view.getSearchQuery();
                 digitalPodModel = new DigitalPodModel();
                 digitalPodModel.search(searchQuery);
-                m_view.setResultOutput(digitalPodModel.getSearchResult());
+                m_view.setResultOutput(digitalPodModel.getSearchResult1());
                 
             } catch (NumberFormatException nfex) {
                 m_view.showError("Bad input: '" + searchQuery + "'");

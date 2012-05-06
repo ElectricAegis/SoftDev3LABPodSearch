@@ -42,7 +42,7 @@ public class DigitalPodModel {
         return _searchResult;
     }
 
-    public void getSearchResult1(){
+    public PodcastModel[] getSearchResult1(){
         try{
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -52,6 +52,8 @@ public class DigitalPodModel {
             NodeList nList = doc.getElementsByTagName("outline");
             //System.out.println("-----------------------");
                 
+            PodcastModel[] podcastModels = new PodcastModel[nList.getLength()]; 
+
             for (int temp = 0; temp < nList.getLength(); temp++) {
                   
                 Node nNode = nList.item(temp);
@@ -59,19 +61,21 @@ public class DigitalPodModel {
             
                     Element eElement = (Element) nNode;
                           
-                    String[] podName = new String[nList.getLength()];
-                    String[] podUrl = new String[nList.getLength()];
-                          
-                    podName[temp]= getPodName("outline",eElement);
-                    podUrl[temp]= getPodUrl("outline",eElement);
+                          PodcastModel tempPodcast = new PodcastModel();
+                          tempPodcast.setName(getPodName("outline",eElement));
+                          tempPodcast.setLink(getPodUrl("outline",eElement));
+                          tempPodcast.setID(temp);
+                          podcastModels[temp] = tempPodcast;
              
                     //System.out.println(podName[temp]+", "+podUrl[temp]);
              
                 }
             }
+            return podcastModels;
         }
         catch(Exception e){
             e.printStackTrace();
+            return new PodcastModel[1];
         }
     }
 
@@ -94,6 +98,12 @@ public class DigitalPodModel {
             //Authenticator.setDefault(new ProxyAuthenticator("students\0708886f", "8712276152081"));  
             System.setProperty("http.proxyHost", "127.0.0.1");  
             System.setProperty("http.proxyPort", "3127");  
+            /*String host="proxyss.wits.ac.za";
+            String port= "80";
+
+            System.setProperty("http.proxyHost", host);
+            System.setProperty("http.proxyPort", port);
+            System.setProperty("http.proxySet", "true");*/
             URLConnection connection = url.openConnection();
             connection.setDoInput(true);
             InputStream inStream = connection.getInputStream();
