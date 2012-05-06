@@ -10,9 +10,9 @@ import pod_search.model.*;
 public class PodSearchView extends JFrame {
     
     //... Components
-    private JTextField  tfSearchQuery   = new JTextField(20);
-    private JTextField  tfSelectResult  = new JTextField(20);
-    private JTextArea   taResultsPanel  = new JTextArea(10,20);
+    private JTextField  tfSearchQuery   = new JTextField(40);
+    private JTextField  tfSelectResult  = new JTextField(40);
+    private JTextArea   taResultsPanel  = new JTextArea(25,60);
     private JButton     btnSearch       = new JButton("Search");
     private JButton     btnView         = new JButton("View Saved Pod Casts");
     private JButton     btnSave         = new JButton("Save");
@@ -37,7 +37,7 @@ public class PodSearchView extends JFrame {
         content.setLayout(new GridBagLayout());
 
         GridBagConstraints gBC = new GridBagConstraints();
-        gBC.fill = GridBagConstraints.HORIZONTAL;
+        gBC.fill = GridBagConstraints.BOTH;
 
         gBC.gridx = 0;
         gBC.gridy = 0;
@@ -54,9 +54,12 @@ public class PodSearchView extends JFrame {
         gBC.gridx = 1;
         gBC.gridy = 1;
         // content.add(tfSelectResult, gBC);
+        cbxListResults.setPreferredSize(new Dimension(60,25));
+        //cbxListResults.setPrototypeDisplayValue("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         content.add(cbxListResults, gBC);
         gBC.gridx = 2;
         gBC.gridy = 1;
+        toggleSaveButton(false);
         content.add(btnSave, gBC);
         gBC.gridx = 0;
         gBC.gridy = 2;
@@ -65,11 +68,15 @@ public class PodSearchView extends JFrame {
         gBC.gridx = 0;
         gBC.gridy = 3;
         gBC.gridwidth = 3;
+        gBC.weighty = 1;
+        gBC.weightx = 1;
         //gBC.gridheight = GridBagConstraints.REMAINDER;
         JScrollPane scrlResultsPanel = new JScrollPane(taResultsPanel);
         content.add(scrlResultsPanel, gBC);
         gBC.gridx = 0;
         gBC.gridy = 4;
+        gBC.weighty = 0;
+        gBC.weightx = 0;
         content.add(btnView, gBC);
         
         //... finalize layout
@@ -85,6 +92,10 @@ public class PodSearchView extends JFrame {
     // public setCurrentData(PodcastModel[] podcastModels) {
     //     currentData = podcastModels;
     // }
+
+    public void toggleSaveButton(boolean value) {
+        btnSave.setEnabled(value);
+    }
 
     public PodcastModel[] getResults() {
         return results;
@@ -108,7 +119,7 @@ public class PodSearchView extends JFrame {
             output += results[i].getID() + " " + 
                     results[i].getName() + " " + 
                     results[i].getLink() + "\n";
-            cbxListResults.addItem(results[i]);
+            cbxListResults.addItem(new PodcastModel(results[i]));
         }
 
         taResultsPanel.setText(output);

@@ -44,6 +44,7 @@ public class PodSearchController {
                 digitalPodModel = new DigitalPodModel();
                 digitalPodModel.search(searchQuery);
                 m_view.setResultOutput(digitalPodModel.getSearchResult1());
+                m_view.toggleSaveButton(true);
                 
             } catch (NumberFormatException nfex) {
                 m_view.showError("Bad input: '" + searchQuery + "'");
@@ -73,6 +74,7 @@ public class PodSearchController {
             try {
                 PodcastModel temp[] = m_model.getSavedPodcasts();
                 m_view.setResultOutput(temp);
+                m_view.toggleSaveButton(false);
             } catch (Exception ex) {
                 m_view.showError("Bad input: '" + ex.toString() + "'");
             }

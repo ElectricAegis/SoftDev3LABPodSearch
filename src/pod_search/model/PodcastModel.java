@@ -14,6 +14,10 @@ public class PodcastModel {
 		setID(id);
 	}
 
+	public PodcastModel(PodcastModel podcastModel) {
+		this(podcastModel.getName(), podcastModel.getLink(), podcastModel.getID());
+	}
+
 	public PodcastModel() {
 		setName("");
 		setLink("");
