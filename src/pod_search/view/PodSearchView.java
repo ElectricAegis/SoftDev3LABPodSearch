@@ -16,6 +16,7 @@ public class PodSearchView extends JFrame {
     private JButton     btnSearch       = new JButton("Search");
     private JButton     btnView         = new JButton("View Saved Pod Casts");
     private JButton     btnSave         = new JButton("Save");
+    private JComboBox   cbxListResults  = new JComboBox();
     
     private PodcastStorageModel m_model;
     private PodcastModel[] results;
@@ -52,7 +53,8 @@ public class PodSearchView extends JFrame {
         content.add(new JLabel("Select Result"), gBC);
         gBC.gridx = 1;
         gBC.gridy = 1;
-        content.add(tfSelectResult, gBC);
+        // content.add(tfSelectResult, gBC);
+        content.add(cbxListResults, gBC);
         gBC.gridx = 2;
         gBC.gridy = 1;
         content.add(btnSave, gBC);
@@ -100,10 +102,13 @@ public class PodSearchView extends JFrame {
         results = podcastModels;
         String output = "";
 
+        cbxListResults.removeAllItems();
+
         for (int i = 0; i< results.length; i++) {
             output += results[i].getID() + " " + 
                     results[i].getName() + " " + 
                     results[i].getLink() + "\n";
+            cbxListResults.addItem(results[i]);
         }
 
         taResultsPanel.setText(output);
@@ -111,6 +116,10 @@ public class PodSearchView extends JFrame {
     
     public void setResultOutput(String output) {
         taResultsPanel.setText(output);
+    }
+
+    public PodcastModel getSelectedPodcast() {
+        return (PodcastModel)cbxListResults.getSelectedItem();
     }
 
     public void showError(String errMessage) {
