@@ -2,6 +2,8 @@ package pod_search.model;
 
 import java.sql.*;
 import java.io.*;
+// import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class PodcastStorageModel {
 
@@ -11,6 +13,7 @@ public class PodcastStorageModel {
   private ResultSet res;
   private PodcastModel[] podcastModels;
   private int numberOfResults;
+  private Logger logger = Logger.getLogger(getClass().getName());
 
   public PodcastModel[] getSavedPodcasts(){
       setup();
@@ -22,7 +25,7 @@ public class PodcastStorageModel {
   }
 
   public void savePodcast(PodcastModel podcast) {
-
+try {
     setup();
     connect();
     String insertQuery = "INSERT INTO podcasts "
@@ -32,7 +35,11 @@ public class PodcastStorageModel {
     addQuery(insertQuery);
     // readResult();
     close();
+  }catch (Exception ex) {
+      // logger.info(ex.toString());
+    logger.info(ex.toString());
   }
+}
 
   private void setup() {
     try

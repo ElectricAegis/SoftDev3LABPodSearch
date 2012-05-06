@@ -8,12 +8,15 @@ package pod_search.controller;
 import java.awt.event.*;
 import pod_search.view.*;
 import pod_search.model.*;
+import java.util.logging.Logger;
 
 public class PodSearchController {
     //... The Controller needs to interact with both the Model and View.
     private PodcastStorageModel m_model;
     private DigitalPodModel digitalPodModel;
     private PodSearchView  m_view;
+    private Logger logger = Logger.getLogger(getClass().getName());
+
     
     //========================================================== constructor
     /** Constructor */
@@ -63,7 +66,11 @@ public class PodSearchController {
             //m_view.reset();
             PodcastModel selectedCast = m_view.getSelectedPodcast();
             // m_view.setResultOutput(results[0].toString());
-            m_model.savePodcast(selectedCast);
+            try {
+                m_model.savePodcast(selectedCast);
+            } catch(Exception ex) {
+                // Logger.info(ex.toString());
+            }
         }
     }// end inner class ClearListener
 
