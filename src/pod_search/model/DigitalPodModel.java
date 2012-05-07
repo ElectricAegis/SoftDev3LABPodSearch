@@ -10,12 +10,15 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 
+import org.apache.log4j.Logger;
+
 public class DigitalPodModel {
 
     private String _searchGenre;
     private String _prefix;
     private String _searchResult;
     private URL _url;
+    private Logger logger = Logger.getLogger(getClass().getName());
 
     public DigitalPodModel() {
         _searchGenre = "";
@@ -32,10 +35,15 @@ public class DigitalPodModel {
             _searchResult = readFromURL(url);
             return _searchResult; 
         }   catch (MalformedURLException e) {
+            logger.warn(e.toString());
             return "Error!";
         }
         
         
+    }
+
+    public URL getSearchUrl(){
+        return _url;
     }
 
     public String getSearchResult(){
@@ -75,6 +83,7 @@ public class DigitalPodModel {
         }
         catch(Exception e){
             e.printStackTrace();
+            logger.fatal(e.toString());
             return new PodcastModel[1];
         }
     }
@@ -119,6 +128,7 @@ public class DigitalPodModel {
         return result;
         }
         catch (IOException e) {
+            logger.warn(e.toString());
             return "Error!";
         }
     }
