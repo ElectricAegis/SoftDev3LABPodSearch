@@ -8,7 +8,7 @@ package pod_search.controller;
 import java.awt.event.*;
 import pod_search.view.*;
 import pod_search.model.*;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class PodSearchController {
     //... The Controller needs to interact with both the Model and View.
@@ -70,7 +70,8 @@ public class PodSearchController {
             try {
                 m_model.savePodcast(selectedCast);
             } catch(Exception ex) {
-                // Logger.info(ex.toString());
+                logger.debug(ex.toString());
+                logger.trace(ex);
             }
         }
     }// end inner class ClearListener

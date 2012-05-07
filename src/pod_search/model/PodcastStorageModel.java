@@ -16,8 +16,9 @@ public class PodcastStorageModel {
       return podcastModels;
   }
 
-  public void savePodcast(PodcastModel podcast) {
+  public void savePodcast(PodcastModel podcast) throws NullPointerException{
     try {
+      if (podcast == null) throw new NullPointerException();
       podcastDAOModel.insertQuery(podcast);
     }catch (Exception ex) {
       // logger.info(ex.toString());
