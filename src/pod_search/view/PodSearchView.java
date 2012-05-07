@@ -29,8 +29,6 @@ public class PodSearchView extends JFrame {
         //m_model.setValue(INITIAL_VALUE);
         
         //... Initialize components
-        //m_totalTf.setText(m_model.getValue());
-        //m_totalTf.setEditable(false);
         
         //... Layout the components.      
         JPanel content = new JPanel();
@@ -88,10 +86,6 @@ public class PodSearchView extends JFrame {
         // Controller in a real program, but this is a short example.
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    // public setCurrentData(PodcastModel[] podcastModels) {
-    //     currentData = podcastModels;
-    // }
 
     public void toggleSaveButton(boolean value) {
         btnSave.setEnabled(value);

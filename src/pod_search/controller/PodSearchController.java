@@ -31,14 +31,7 @@ public class PodSearchController {
     }
     
     
-    ////////////////////////////////////////// inner class MultiplyListener
-    /** When a mulitplication is requested.
-     *  1. Get the user input number from the View.
-     *  2. Call the model to mulitply by this number.
-     *  3. Get the result from the Model.
-     *  4. Tell the View to display the result.
-     * If there was an error, tell the View to display it.
-     */
+    ////////////////////////////////////////// inner class SearchListener
     class SearchListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String searchQuery = "";
@@ -53,20 +46,13 @@ public class PodSearchController {
                 m_view.showError("Bad input: '" + searchQuery + "'");
             }
         }
-    }//end inner class MultiplyListener
+    }//end inner class SearchListener
     
-    
-    //////////////////////////////////////////// inner class ClearListener
-    /**  1. Reset model.
-     *   2. Reset View.
-     */    
+    //////////////////////////////////////////// inner class SaveListener
     class SaveListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //m_model.reset();
-            //m_view.reset();
             PodcastModel selectedCast = m_view.getSelectedPodcast();
             m_view.showError("Saved Podcast");
-            // m_view.setResultOutput(results[0].toString());
             try {
                 m_model.savePodcast(selectedCast);
             } catch(Exception ex) {
@@ -74,12 +60,12 @@ public class PodSearchController {
                 logger.trace(ex);
             }
         }
-    }// end inner class ClearListener
+    }// end inner class SaveListener
 
+    //////////////////////////////////////////// inner class ViewResultListener
     class ViewResultListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //m_model.reset();
-            //m_view.reset();
+
             try {
                 PodcastModel temp[] = m_model.getSavedPodcasts();
                 m_view.setResultOutput(temp);
@@ -88,5 +74,6 @@ public class PodSearchController {
                 m_view.showError("Bad input: '" + ex.toString() + "'");
             }
         }
-    }// end inner class ClearListener
+    }// end inner class ViewResultListener
 }
+    

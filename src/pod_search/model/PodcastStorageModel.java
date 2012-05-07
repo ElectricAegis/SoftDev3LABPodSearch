@@ -1,27 +1,23 @@
 package pod_search.model;
 
-import java.sql.*;
-import java.io.*;
-// import java.util.logging.Logger;
 import org.apache.log4j.Logger;
 
 public class PodcastStorageModel {
 
   private PodcastModel[] podcastModels;
   private Logger logger = Logger.getLogger(getClass().getName());
-  private PodcastDAOModel podcastDAOModel = new PodcastDAOModel("podcasts");
+  private PodcastDAOModel podcastDAOModel  = new PodcastDAOModel("podcasts");
 
   public PodcastModel[] getSavedPodcasts(){
-      podcastModels = podcastDAOModel.selectAll();
+      podcastModels = getDAO().selectAll();
       return podcastModels;
   }
 
   public void savePodcast(PodcastModel podcast) throws NullPointerException{
+    if (podcast == null) throw new NullPointerException("PodcastModel is cannot be null in savePodcast");
     try {
-      if (podcast == null) throw new NullPointerException();
-      podcastDAOModel.insertQuery(podcast);
+      getDAO().insertQuery(podcast);
     }catch (Exception ex) {
-      // logger.info(ex.toString());
       logger.fatal(ex.toString());
     }
   }
@@ -30,6 +26,10 @@ public class PodcastStorageModel {
     for (int i=0; i<podcastModels.length; i++) {
       savePodcast(podcastModels[i]);
     }
+  }
+
+  public PodcastDAOModel getDAO(){
+    return podcastDAOModel;
   }
 
 }

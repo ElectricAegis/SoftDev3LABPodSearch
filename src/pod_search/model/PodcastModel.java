@@ -21,7 +21,7 @@ public class PodcastModel {
 	public PodcastModel() {
 		setName("");
 		setLink("");
-		setID(0);
+		setID(-1);
 	}
 
 	public void setName(String name) {

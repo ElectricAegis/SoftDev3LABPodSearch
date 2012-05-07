@@ -71,7 +71,9 @@ public class PodcastDAOModel {
                 logger.fatal(ex.toString());
                 logger.trace(ex); 
             }
-            return null;
+            PodcastModel[] emptyQuery = new PodcastModel[1];
+            emptyQuery[0] = new PodcastModel();
+            return emptyQuery;
         }
   }
 
@@ -140,14 +142,15 @@ public class PodcastDAOModel {
                 logger.fatal(ex.toString());
                 logger.trace(ex); 
             }
-            return null;
+            PodcastModel[] emptyQuery = new PodcastModel[1];
+            emptyQuery[0] = new PodcastModel();
+            return emptyQuery;
         }
   }
 
   private void close() {
     try
         {
-          // System.out.println("close");
             if (res != null) res.close();
             if (stmt != null) stmt.close();
             if (con != null) con.close();
