@@ -65,6 +65,7 @@ public class PodSearchController {
             //m_model.reset();
             //m_view.reset();
             PodcastModel selectedCast = m_view.getSelectedPodcast();
+            m_view.showError("Saved Podcast");
             // m_view.setResultOutput(results[0].toString());
             try {
                 m_model.savePodcast(selectedCast);
