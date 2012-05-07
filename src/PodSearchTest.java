@@ -33,7 +33,8 @@ public class PodSearchTest extends junit.framework.TestCase {
 	public void testSaveNullPodcast(){
 		PodcastStorageModel storageModel = new PodcastStorageModel();
 		try {
-			storageModel.savePodcast(null);
+			PodcastModel nullModel = null;
+			storageModel.savePodcast(nullModel);
 			fail("no NullPointerException thrown");
 		} catch (NullPointerException ex) {
 		}
