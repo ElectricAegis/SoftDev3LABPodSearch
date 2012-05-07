@@ -83,7 +83,7 @@ public class DigitalPodModel {
         }
         catch(Exception e){
             e.printStackTrace();
-            logger.fatal(e.toString());
+            logger.trace(e);
             return new PodcastModel[1];
         }
     }

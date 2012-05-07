@@ -16,7 +16,7 @@ public class PodSearchTest extends junit.framework.TestCase {
         fail("An error message");
     }
 
-    public void testUrlRetrieval(){
+    public void testUrlConstruction(){
 		DigitalPodModel digital = new DigitalPodModel();
 		digital.search("country");
 		String localUrl = "http://www.digitalpodcast.com//podcastsearchservice/v2b/search/?appid=podsearch&keywords=country";
